@@ -331,3 +331,77 @@ window.scrollToProducts =
 console.log(
     "APO Technology loaded."
 );
+
+
+
+
+
+
+
+/* =========================
+   PRODUCT COLOR SWITCHER
+========================= */
+
+window.changePhoneColor =
+function (
+    imageId,
+    newImage,
+    selectedButton
+) {
+
+    const image =
+        document.getElementById(
+            imageId
+        );
+
+    if (!image) {
+        return;
+    }
+
+
+    /* Remove active from siblings */
+
+    const colorRow =
+        selectedButton.parentElement;
+
+    const buttons =
+        colorRow.querySelectorAll(
+            ".color-dot"
+        );
+
+    buttons.forEach(
+        function (button) {
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    selectedButton.classList.add(
+        "active"
+    );
+
+
+    /* Small fade animation */
+
+    image.style.opacity =
+        "0";
+
+
+    setTimeout(
+        function () {
+
+            image.src =
+                newImage;
+
+            image.style.opacity =
+                "1";
+
+        },
+        120
+    );
+
+};
