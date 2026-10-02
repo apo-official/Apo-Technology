@@ -465,3 +465,53 @@ colorButtons.forEach(
 console.log(
     "APO Technology loaded successfully."
 );
+
+
+const products = [
+    {
+        name: "iPhone 17 Pro",
+        brand: "Apple",
+        category: "Phones",
+        price: 3899,
+        oldPrice: 4199,
+        image: "images/iphone-17-pro.png",
+        colors: ["Silver", "Black", "Orange"]
+    },
+
+    {
+        name: "Samsung Galaxy S26 Ultra",
+        brand: "Samsung",
+        category: "Phones",
+        price: 3699,
+        oldPrice: 3999,
+        image: "images/galaxy-s26-ultra.png",
+        colors: ["Black", "Silver", "Blue"]
+    },
+
+    {
+        name: "Meta Quest 3",
+        brand: "Meta",
+        category: "VR",
+        price: 1499,
+        image: "images/meta-quest-3.png",
+        colors: ["White"]
+    },
+
+    {
+        name: "Lenovo Legion Gaming Laptop",
+        brand: "Lenovo",
+        category: "Computers",
+        price: 4299,
+        image: "images/lenovo-legion.png",
+        colors: ["Black"]
+    },
+
+    {
+        name: "PlayStation 5",
+        brand: "Sony",
+        category: "Gaming",
+        price: 1699,
+        image: "images/ps5.png",
+        colors: ["White"]
+    }
+];
