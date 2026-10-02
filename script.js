@@ -1,158 +1,467 @@
-const categoryButton = document.getElementById("categoryButton");
-const categoryMenu = document.getElementById("categoryMenu");
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-const productCards = [...document.querySelectorAll(".product-card")];
-const cartCount = document.getElementById("cartCount");
-const savedCount = document.getElementById("savedCount");
-const resultText = document.getElementById("resultText");
-const cartButton = document.getElementById("cartButton");
-const cartDrawer = document.getElementById("cartDrawer");
-const closeCart = document.getElementById("closeCart");
-const overlay = document.getElementById("overlay");
-const cartItems = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
+const categoriesButton =
+    document.getElementById(
+        "categoriesButton"
+    );
 
-let currentFilter = "all";
-let cart = [];
-let saved = 0;
+const categoryDropdown =
+    document.getElementById(
+        "categoryDropdown"
+    );
 
-function openCategories() {
-  categoryMenu.classList.toggle("show");
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const searchButton =
+    document.getElementById(
+        "searchButton"
+    );
+
+const productGrid =
+    document.getElementById(
+        "productGrid"
+    );
+
+const products =
+    document.querySelectorAll(
+        ".product-card"
+    );
+
+const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+const savedCount =
+    document.getElementById(
+        "savedCount"
+    );
+
+const shopNowButton =
+    document.getElementById(
+        "shopNowButton"
+    );
+
+
+let cartAmount = 0;
+
+let savedAmount = 0;
+
+
+/* CATEGORY MENU */
+
+if (
+    categoriesButton
+    &&
+    categoryDropdown
+) {
+
+    categoriesButton.addEventListener(
+        "click",
+        function () {
+
+            categoryDropdown.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
 }
 
-function applyFilters() {
-  const query = searchInput.value.trim().toLowerCase();
-  let visible = 0;
 
-  productCards.forEach(card => {
-    const name = (card.dataset.name || "").toLowerCase();
-    const category = card.dataset.category || "";
-    const matchesText = !query || name.includes(query);
-    const matchesCategory = currentFilter === "all" || category === currentFilter;
-    const show = matchesText && matchesCategory;
-    card.style.display = show ? "" : "none";
-    if (show) visible += 1;
-  });
+/* CLOSE CATEGORY MENU */
 
-  resultText.textContent = `${visible} product${visible === 1 ? "" : "s"} shown`;
+document.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            !categoryDropdown
+            ||
+            !categoriesButton
+        ) {
+            return;
+        }
+
+        const clickedDropdown =
+            categoryDropdown.contains(
+                event.target
+            );
+
+        const clickedButton =
+            categoriesButton.contains(
+                event.target
+            );
+
+        if (
+            !clickedDropdown
+            &&
+            !clickedButton
+        ) {
+
+            categoryDropdown.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
+/* SEARCH */
+
+function runSearch() {
+
+    if (!searchInput) {
+        return;
+    }
+
+    const searchTerm =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+    products.forEach(
+        function (product) {
+
+            const name =
+                (
+                    product.dataset.name
+                    ||
+                    ""
+                ).toLowerCase();
+
+
+            if (
+                searchTerm === ""
+                ||
+                name.includes(
+                    searchTerm
+                )
+            ) {
+
+                product.style.display =
+                    "";
+
+            } else {
+
+                product.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
 }
 
-function setFilter(filter) {
-  currentFilter = filter;
-  searchInput.value = "";
-  categoryMenu.classList.remove("show");
-  applyFilters();
-  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+
+if (searchButton) {
+
+    searchButton.addEventListener(
+        "click",
+        runSearch
+    );
+
 }
 
-function parsePrice(card) {
-  const text = card.querySelector(".price-row strong")?.textContent || "0";
-  const value = Number(text.replace(/[^0-9.]/g, ""));
-  return Number.isFinite(value) ? value : 0;
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "input",
+        runSearch
+    );
+
+
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                runSearch();
+
+            }
+
+        }
+    );
+
 }
 
-function updateCart() {
-  cartCount.textContent = String(cart.length);
-  cartItems.innerHTML = "";
 
-  if (cart.length === 0) {
-    cartItems.innerHTML = '<p class="empty">Your cart is empty.</p>';
-    cartTotal.textContent = "0₾";
-    return;
-  }
+/* CART BUTTONS */
 
-  let total = 0;
-  cart.forEach((item, index) => {
-    total += item.price;
-    const row = document.createElement("div");
-    row.className = "cart-line";
-    row.innerHTML = `<div><b>${item.name}</b><br><span>${item.price.toLocaleString()}₾</span></div><button type="button" data-remove="${index}">REMOVE</button>`;
-    cartItems.appendChild(row);
-  });
+const cartButtons =
+    document.querySelectorAll(
+        ".cart-button"
+    );
 
-  cartTotal.textContent = `${total.toLocaleString()}₾`;
+
+cartButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                cartAmount += 1;
+
+
+                if (cartCount) {
+
+                    cartCount.textContent =
+                        String(
+                            cartAmount
+                        );
+
+                }
+
+
+                const originalText =
+                    button.textContent;
+
+
+                button.textContent =
+                    "ADDED ✓";
+
+
+                button.style.background =
+                    "#6757ff";
+
+
+                setTimeout(
+                    function () {
+
+                        button.textContent =
+                            originalText;
+
+                        button.style.background =
+                            "";
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* SAVE / HEART BUTTONS */
+
+const saveButtons =
+    document.querySelectorAll(
+        ".save-button"
+    );
+
+
+saveButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const currentlySaved =
+                    button.classList.contains(
+                        "saved"
+                    );
+
+
+                if (currentlySaved) {
+
+                    button.classList.remove(
+                        "saved"
+                    );
+
+                    button.textContent =
+                        "♡";
+
+                    savedAmount -= 1;
+
+                    if (
+                        savedAmount < 0
+                    ) {
+
+                        savedAmount = 0;
+
+                    }
+
+                } else {
+
+                    button.classList.add(
+                        "saved"
+                    );
+
+                    button.textContent =
+                        "♥";
+
+                    savedAmount += 1;
+
+                }
+
+
+                if (savedCount) {
+
+                    savedCount.textContent =
+                        String(
+                            savedAmount
+                        );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* SHOP NOW */
+
+if (
+    shopNowButton
+    &&
+    productGrid
+) {
+
+    shopNowButton.addEventListener(
+        "click",
+        function () {
+
+            productGrid.scrollIntoView({
+                behavior:
+                    "smooth",
+
+                block:
+                    "start"
+            });
+
+        }
+    );
+
 }
 
-function showCart() {
-  cartDrawer.classList.add("open");
-  overlay.classList.add("show");
-}
 
-function hideCart() {
-  cartDrawer.classList.remove("open");
-  overlay.classList.remove("show");
-}
+/* CATEGORY CARDS */
 
-categoryButton?.addEventListener("click", openCategories);
-searchButton?.addEventListener("click", applyFilters);
-searchInput?.addEventListener("input", applyFilters);
-searchInput?.addEventListener("keydown", e => {
-  if (e.key === "Enter") applyFilters();
-});
+const categoryCards =
+    document.querySelectorAll(
+        ".category-card"
+    );
 
-document.addEventListener("click", e => {
-  if (categoryMenu && categoryButton && !categoryMenu.contains(e.target) && !categoryButton.contains(e.target)) {
-    categoryMenu.classList.remove("show");
-  }
-});
 
-document.querySelectorAll("[data-filter]").forEach(button => {
-  button.addEventListener("click", () => setFilter(button.dataset.filter));
-});
+categoryCards.forEach(
+    function (card) {
 
-document.querySelectorAll("[data-nav-filter]").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    setFilter(link.dataset.navFilter);
-  });
-});
+        card.addEventListener(
+            "click",
+            function () {
 
-document.querySelectorAll(".heart").forEach(button => {
-  button.addEventListener("click", () => {
-    const active = button.classList.toggle("saved");
-    button.textContent = active ? "♥" : "♡";
-    saved += active ? 1 : -1;
-    saved = Math.max(0, saved);
-    savedCount.textContent = String(saved);
-  });
-});
+                const searchTerm =
+                    card.dataset.search;
 
-document.querySelectorAll(".cart-btn:not(.disabled)").forEach(button => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".product-card");
-    cart.push({ name: card.dataset.name, price: parsePrice(card) });
-    updateCart();
-    button.textContent = "ADDED ✓";
-    setTimeout(() => (button.textContent = "ADD TO CART"), 850);
-  });
-});
 
-document.querySelectorAll(".swatch").forEach(swatch => {
-  swatch.addEventListener("click", () => {
-    const group = swatch.closest(".swatches");
-    group.querySelectorAll(".swatch").forEach(s => s.classList.remove("active"));
-    swatch.classList.add("active");
-    const card = swatch.closest(".product-card");
-    const variant = card.querySelector(".variant");
-    if (variant && swatch.title) variant.textContent = swatch.title;
-  });
-});
+                if (
+                    !searchTerm
+                    ||
+                    !searchInput
+                ) {
 
-cartButton?.addEventListener("click", showCart);
-closeCart?.addEventListener("click", hideCart);
-overlay?.addEventListener("click", hideCart);
-cartItems?.addEventListener("click", e => {
-  const button = e.target.closest("[data-remove]");
-  if (!button) return;
-  cart.splice(Number(button.dataset.remove), 1);
-  updateCart();
-});
+                    return;
 
-document.getElementById("shopNow")?.addEventListener("click", () => setFilter("iphone"));
-document.getElementById("viewDeals")?.addEventListener("click", () => document.getElementById("deals").scrollIntoView({ behavior: "smooth" }));
-document.getElementById("dealShopButton")?.addEventListener("click", () => document.getElementById("products").scrollIntoView({ behavior: "smooth" }));
+                }
 
-updateCart();
-applyFilters();
-console.log("APO Technology loaded successfully.");
+
+                searchInput.value =
+                    searchTerm;
+
+
+                runSearch();
+
+
+                if (productGrid) {
+
+                    productGrid.scrollIntoView({
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "start"
+                    });
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* COLOR BUTTONS */
+
+const colorButtons =
+    document.querySelectorAll(
+        ".color-dot"
+    );
+
+
+colorButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const container =
+                    button.closest(
+                        ".color-options"
+                    );
+
+
+                if (!container) {
+                    return;
+                }
+
+
+                const buttons =
+                    container.querySelectorAll(
+                        ".color-dot"
+                    );
+
+
+                buttons.forEach(
+                    function (otherButton) {
+
+                        otherButton.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+console.log(
+    "APO Technology loaded successfully."
+);
