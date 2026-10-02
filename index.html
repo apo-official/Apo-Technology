@@ -1,12 +1,433 @@
-<div class="brand">
-    <img
-        src="images/apo-logo.png"
-        alt="APO Technology"
-        class="apo-logo-img"
-    >
+<section class="section products-section">
 
-    <div class="brand-text">
-        <strong>TECHNOLOGY</strong>
-        <span>POWERED BY APO</span>
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">
+                APPLE
+            </span>
+
+            <h2>
+                iPhone
+            </h2>
+        </div>
+
+        <a href="#">
+            View all →
+        </a>
+
     </div>
-</div>
+
+
+    <div class="product-grid" id="productGrid">
+
+        <!-- IPHONE 17 PRO -->
+
+        <article
+            class="product-card"
+            data-name="Apple iPhone 17 Pro"
+        >
+
+            <div class="product-top">
+
+                <span class="new">
+                    NEW
+                </span>
+
+                <button
+                    class="heart"
+                    onclick="toggleSaved(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="product-image-box">
+
+                <img
+                    id="iphone17ProImage"
+                    src="images/iphone17pro-orange.png"
+                    alt="Apple iPhone 17 Pro"
+                    class="real-product-image"
+                >
+
+            </div>
+
+
+            <span class="product-category">
+                APPLE
+            </span>
+
+
+            <h3>
+                Apple iPhone 17 Pro 256GB
+            </h3>
+
+
+            <p class="product-spec">
+                6.3" Super Retina XDR • A19 Pro
+            </p>
+
+
+            <!-- COLORS -->
+
+            <div class="color-row">
+
+                <button
+                    class="color-dot orange active"
+                    title="Cosmic Orange"
+                    onclick="changePhoneColor(
+                        'iphone17ProImage',
+                        'images/iphone17pro-orange.png',
+                        this
+                    )"
+                ></button>
+
+                <button
+                    class="color-dot deep-blue"
+                    title="Deep Blue"
+                    onclick="changePhoneColor(
+                        'iphone17ProImage',
+                        'images/iphone17pro-blue.png',
+                        this
+                    )"
+                ></button>
+
+                <button
+                    class="color-dot silver"
+                    title="Silver"
+                    onclick="changePhoneColor(
+                        'iphone17ProImage',
+                        'images/iphone17pro-silver.png',
+                        this
+                    )"
+                ></button>
+
+            </div>
+
+
+            <div class="prices">
+
+                <strong>
+                    3,709 ₾
+                </strong>
+
+            </div>
+
+
+            <div class="monthly-price">
+                From 309 ₾ / month
+            </div>
+
+
+            <button
+                class="cart-button"
+                onclick="addToCart()"
+            >
+                ADD TO CART
+            </button>
+
+        </article>
+
+
+
+        <!-- IPHONE 17 PRO MAX -->
+
+        <article
+            class="product-card"
+            data-name="Apple iPhone 17 Pro Max"
+        >
+
+            <div class="product-top">
+
+                <span class="popular">
+                    POPULAR
+                </span>
+
+                <button
+                    class="heart"
+                    onclick="toggleSaved(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="product-image-box">
+
+                <img
+                    src="images/iphone17promax-blue.png"
+                    alt="Apple iPhone 17 Pro Max"
+                    class="real-product-image"
+                >
+
+            </div>
+
+
+            <span class="product-category">
+                APPLE
+            </span>
+
+
+            <h3>
+                Apple iPhone 17 Pro Max 256GB
+            </h3>
+
+
+            <p class="product-spec">
+                6.9" Super Retina XDR • A19 Pro
+            </p>
+
+
+            <div class="color-row">
+
+                <button
+                    class="color-dot deep-blue active"
+                    title="Deep Blue"
+                ></button>
+
+                <button
+                    class="color-dot orange"
+                    title="Cosmic Orange"
+                ></button>
+
+                <button
+                    class="color-dot silver"
+                    title="Silver"
+                ></button>
+
+            </div>
+
+
+            <div class="prices">
+
+                <strong>
+                    4,049 ₾
+                </strong>
+
+            </div>
+
+
+            <div class="monthly-price">
+                From 337 ₾ / month
+            </div>
+
+
+            <button
+                class="cart-button"
+                onclick="addToCart()"
+            >
+                ADD TO CART
+            </button>
+
+        </article>
+
+
+
+        <!-- IPHONE AIR -->
+
+        <article
+            class="product-card"
+            data-name="Apple iPhone Air"
+        >
+
+            <div class="product-top">
+
+                <span class="new">
+                    NEW
+                </span>
+
+                <button
+                    class="heart"
+                    onclick="toggleSaved(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="product-image-box">
+
+                <img
+                    src="images/iphoneair-gold.png"
+                    alt="Apple iPhone Air"
+                    class="real-product-image"
+                >
+
+            </div>
+
+
+            <span class="product-category">
+                APPLE
+            </span>
+
+
+            <h3>
+                Apple iPhone Air 256GB
+            </h3>
+
+
+            <p class="product-spec">
+                Ultra-thin design • 256GB
+            </p>
+
+
+            <div class="color-row">
+
+                <button
+                    class="color-dot light-gold active"
+                    title="Light Gold"
+                ></button>
+
+                <button
+                    class="color-dot sky-blue"
+                    title="Sky Blue"
+                ></button>
+
+                <button
+                    class="color-dot white"
+                    title="Cloud White"
+                ></button>
+
+                <button
+                    class="color-dot black"
+                    title="Space Black"
+                ></button>
+
+            </div>
+
+
+            <div class="prices">
+
+                <strong>
+                    2,929 ₾
+                </strong>
+
+            </div>
+
+
+            <div class="monthly-price">
+                From 244 ₾ / month
+            </div>
+
+
+            <button
+                class="cart-button"
+                onclick="addToCart()"
+            >
+                ADD TO CART
+            </button>
+
+        </article>
+
+
+
+        <!-- IPHONE 17 -->
+
+        <article
+            class="product-card"
+            data-name="Apple iPhone 17"
+        >
+
+            <div class="product-top">
+
+                <span class="stock">
+                    IN STOCK
+                </span>
+
+                <button
+                    class="heart"
+                    onclick="toggleSaved(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="product-image-box">
+
+                <img
+                    src="images/iphone17-lavender.png"
+                    alt="Apple iPhone 17"
+                    class="real-product-image"
+                >
+
+            </div>
+
+
+            <span class="product-category">
+                APPLE
+            </span>
+
+
+            <h3>
+                Apple iPhone 17
+            </h3>
+
+
+            <p class="product-spec">
+                6.3" Super Retina XDR • ProMotion
+            </p>
+
+
+            <div class="color-row">
+
+                <button
+                    class="color-dot lavender active"
+                    title="Lavender"
+                ></button>
+
+                <button
+                    class="color-dot sage"
+                    title="Sage"
+                ></button>
+
+                <button
+                    class="color-dot mist-blue"
+                    title="Mist Blue"
+                ></button>
+
+                <button
+                    class="color-dot white"
+                    title="White"
+                ></button>
+
+                <button
+                    class="color-dot black"
+                    title="Black"
+                ></button>
+
+            </div>
+
+
+            <div class="prices">
+
+                <strong>
+                    2,699 ₾
+                </strong>
+
+            </div>
+
+
+            <div class="monthly-price">
+                APO Technology
+            </div>
+
+
+            <button
+                class="cart-button"
+                onclick="addToCart()"
+            >
+                ADD TO CART
+            </button>
+
+        </article>
+
+    </div>
+
+    </section>
