@@ -1,196 +1,942 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APO Technology</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>APO Technology</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 <body>
-  <div class="topbar">
-    <div>APO TECHNOLOGY <span class="demo-pill">TEST STORE</span></div>
-    <div class="top-links"><a href="#deals">Deals</a><a href="#products">Products</a><a href="#footer">Support</a></div>
-  </div>
 
-  <header class="header">
-    <a class="brand" href="#">
-      <img src="assets/apo-logo.png" alt="APO logo" />
-      <div><strong>APO</strong><span>TECHNOLOGY</span></div>
-    </a>
+    <!-- TOP BAR -->
 
-    <button id="categoryButton" class="category-btn" type="button">☰ Categories</button>
+    <div class="topbar">
 
-    <div class="search-wrap">
-      <input id="searchInput" type="search" placeholder="Search iPhone, MacBook, AirPods..." />
-      <button id="searchButton" type="button">Search</button>
-    </div>
-
-    <div class="header-actions">
-      <button class="icon-btn" id="savedButton" type="button">♡ <span>Saved</span><b id="savedCount">0</b></button>
-      <button class="icon-btn" id="cartButton" type="button">🛒 <span>Cart</span><b id="cartCount">0</b></button>
-    </div>
-  </header>
-
-  <div id="categoryMenu" class="category-menu">
-    <button data-filter="all">All products</button>
-    <button data-filter="iphone">iPhone</button>
-    <button data-filter="mac">MacBook</button>
-    <button data-filter="audio">Audio</button>
-    <button data-filter="wearable">Wearables</button>
-    <button data-filter="gaming">Gaming</button>
-  </div>
-
-  <nav class="nav">
-    <a href="#products" data-nav-filter="iphone">iPhone</a>
-    <a href="#products" data-nav-filter="mac">MacBook</a>
-    <a href="#products" data-nav-filter="audio">AirPods</a>
-    <a href="#products" data-nav-filter="wearable">Apple Watch</a>
-    <a href="#products" data-nav-filter="all">All Tech</a>
-    <a href="#deals" class="deal-link">APO Deals</a>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">APO TECHNOLOGY</span>
-        <h1>Real tech.<br><span>APO style.</span></h1>
-        <p>A clean demo electronics shop with real product names, product photos and color options.</p>
-        <div class="hero-buttons">
-          <button class="primary" id="shopNow">Shop iPhone</button>
-          <button class="secondary" id="viewDeals">View deals</button>
+        <div>
+            APO TECHNOLOGY
         </div>
-      </div>
-      <div class="hero-art">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/IPhone_17_Pro.png" alt="iPhone 17 Pro" />
-        <div class="hero-glow"></div>
-      </div>
+
+        <div class="topbar-links">
+
+            <a href="#">Promotions</a>
+            <a href="#">Stores</a>
+            <a href="#">Support</a>
+
+            <button>
+                EN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="brand">
+
+            <div class="apo-logo">
+                APO
+            </div>
+
+            <div class="brand-info">
+
+                <strong>
+                    TECHNOLOGY
+                </strong>
+
+                <span>
+                    BY APO
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="categories-button"
+            id="categoriesButton"
+        >
+            ☰ Categories
+        </button>
+
+
+        <div class="search">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search products..."
+            >
+
+            <button
+                id="searchButton"
+            >
+                🔍
+            </button>
+
+        </div>
+
+
+        <div class="header-buttons">
+
+            <button>
+                ♡
+
+                <span>
+                    Saved
+                </span>
+
+                <b id="savedCount">
+                    0
+                </b>
+            </button>
+
+
+            <button>
+                🛒
+
+                <span>
+                    Cart
+                </span>
+
+                <b id="cartCount">
+                    0
+                </b>
+            </button>
+
+
+            <button class="login-button">
+                Sign In
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CATEGORY DROPDOWN -->
+
+    <div
+        id="categoryDropdown"
+        class="category-dropdown"
+    >
+
+        <a href="#">
+            📱 Mobile Phones
+        </a>
+
+        <a href="#">
+            💻 Computers & Laptops
+        </a>
+
+        <a href="#">
+            🎮 Gaming
+        </a>
+
+        <a href="#">
+            📺 TVs
+        </a>
+
+        <a href="#">
+            🎧 Audio
+        </a>
+
+        <a href="#">
+            ⌚ Smart Watches
+        </a>
+
+        <a href="#">
+            📷 Cameras
+        </a>
+
+        <a href="#">
+            🏠 Home Technology
+        </a>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#">
+            Home
+        </a>
+
+        <a href="#phones">
+            Phones
+        </a>
+
+        <a href="#">
+            Computers
+        </a>
+
+        <a href="#">
+            Gaming
+        </a>
+
+        <a href="#">
+            TVs
+        </a>
+
+        <a href="#">
+            Accessories
+        </a>
+
+        <a
+            href="#deals"
+            class="deals-link"
+        >
+            🔥 Deals
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-small">
+                APO TECHNOLOGY
+            </span>
+
+            <h1>
+                NEW TECH.<br>
+                BETTER PRICES.
+            </h1>
+
+            <p>
+                Smartphones, computers, gaming,
+                accessories and more.
+            </p>
+
+            <button
+                id="shopNowButton"
+                class="hero-button"
+            >
+                SHOP NOW
+            </button>
+
+        </div>
+
+
+        <div class="hero-phone">
+
+            <img
+                src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=850&q=90"
+                alt="Smartphone"
+            >
+
+        </div>
+
     </section>
 
-    <section class="quick-categories">
-      <button data-filter="iphone"><span>📱</span><b>iPhone</b><small>Phones & accessories</small></button>
-      <button data-filter="mac"><span>💻</span><b>MacBook</b><small>Laptops</small></button>
-      <button data-filter="audio"><span>🎧</span><b>Audio</b><small>AirPods & speakers</small></button>
-      <button data-filter="wearable"><span>⌚</span><b>Wearables</b><small>Smart watches</small></button>
-      <button data-filter="gaming"><span>🎮</span><b>Gaming</b><small>Consoles & gear</small></button>
+
+    <!-- CATEGORIES -->
+
+    <section class="page-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span>
+                    SHOP BY
+                </span>
+
+                <h2>
+                    Categories
+                </h2>
+
+            </div>
+
+            <a href="#">
+                View all →
+            </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div
+                class="category-card"
+                data-search="iphone"
+            >
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Smartphones
+                </h3>
+
+                <p>
+                    Apple, Samsung and more
+                </p>
+
+            </div>
+
+
+            <div
+                class="category-card"
+                data-search="laptop"
+            >
+
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Laptops
+                </h3>
+
+                <p>
+                    Work and gaming
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Gaming
+                </h3>
+
+                <p>
+                    Consoles and accessories
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    📺
+                </div>
+
+                <h3>
+                    TVs
+                </h3>
+
+                <p>
+                    Smart TVs and displays
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🎧
+                </div>
+
+                <h3>
+                    Audio
+                </h3>
+
+                <p>
+                    Headphones and speakers
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    ⌚
+                </div>
+
+                <h3>
+                    Watches
+                </h3>
+
+                <p>
+                    Smart watches
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="deals" class="deal-banner">
-      <div><span>APO WEEK</span><h2>TECH DEALS<br>ARE LIVE.</h2><p>Demo pricing for the test storefront.</p></div>
-      <button id="dealShopButton" type="button">SHOP PRODUCTS</button>
+
+    <!-- DEAL BANNER -->
+
+    <section
+        class="deal-banner"
+        id="deals"
+    >
+
+        <div>
+
+            <span>
+                APO WEEK
+            </span>
+
+            <h2>
+                HOT TECH DEALS
+            </h2>
+
+            <p>
+                Discounts on selected technology.
+            </p>
+
+        </div>
+
+        <button>
+            VIEW DEALS
+        </button>
+
     </section>
 
-    <section id="products" class="products-section">
-      <div class="section-head">
-        <div><span class="eyebrow">POPULAR</span><h2>Featured technology</h2></div>
-        <p id="resultText">Showing all products</p>
-      </div>
 
-      <div id="productGrid" class="product-grid">
-        <article class="product-card" data-name="Apple iPhone 17 256GB Black" data-category="iphone">
-          <div class="product-badges"><span class="badge hot">POPULAR</span><button class="heart" type="button" aria-label="Save product">♡</button></div>
-          <div class="product-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20iPhone%2017.jpg" alt="Black iPhone 17" /></div>
-          <span class="brand-label">APPLE</span>
-          <h3>Apple iPhone 17 8GB/256GB</h3>
-          <p class="variant">Black</p>
-          <div class="swatches" aria-label="Available colors">
-            <button class="swatch black active" title="Black"></button>
-            <button class="swatch white" title="White"></button>
-            <button class="swatch blue" title="Mist Blue"></button>
-            <button class="swatch lavender" title="Lavender"></button>
-            <button class="swatch sage" title="Sage"></button>
-          </div>
-          <div class="price-row"><strong>2,849₾</strong><small>from 237₾ / month</small></div>
-          <button class="cart-btn" type="button">ADD TO CART</button>
-        </article>
+    <!-- IPHONES -->
 
-        <article class="product-card" data-name="Apple iPhone 17 Pro 256GB Cosmic Orange" data-category="iphone">
-          <div class="product-badges"><span class="badge new">NEW</span><button class="heart" type="button" aria-label="Save product">♡</button></div>
-          <div class="product-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/IPhone%2017%20Pro.png" alt="iPhone 17 Pro Cosmic Orange" /></div>
-          <span class="brand-label">APPLE</span>
-          <h3>Apple iPhone 17 Pro 12GB/256GB</h3>
-          <p class="variant">Cosmic Orange</p>
-          <div class="swatches">
-            <button class="swatch orange active" title="Cosmic Orange"></button>
-            <button class="swatch deepblue" title="Deep Blue"></button>
-            <button class="swatch silver" title="Silver"></button>
-          </div>
-          <div class="price-row"><strong>3,709₾</strong><small>from 309₾ / month</small></div>
-          <button class="cart-btn" type="button">ADD TO CART</button>
-        </article>
+    <section
+        class="page-section"
+        id="phones"
+    >
 
-        <article class="product-card" data-name="Apple iPhone 17 Pro Deep Blue" data-category="iphone">
-          <div class="product-badges"><span class="badge">PRO</span><button class="heart" type="button" aria-label="Save product">♡</button></div>
-          <div class="product-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/IPhone%2017%20Pro%20(Deep%20Blue%20model).jpg" alt="iPhone 17 Pro Deep Blue" /></div>
-          <span class="brand-label">APPLE</span>
-          <h3>Apple iPhone 17 Pro 12GB/256GB</h3>
-          <p class="variant">Deep Blue</p>
-          <div class="swatches">
-            <button class="swatch orange" title="Cosmic Orange"></button>
-            <button class="swatch deepblue active" title="Deep Blue"></button>
-            <button class="swatch silver" title="Silver"></button>
-          </div>
-          <div class="price-row"><strong>3,709₾</strong><small>from 309₾ / month</small></div>
-          <button class="cart-btn" type="button">ADD TO CART</button>
-        </article>
+        <div class="section-header">
 
-        <article class="product-card" data-name="Apple iPhone 17 Pro Silver" data-category="iphone">
-          <div class="product-badges"><span class="badge">PRO</span><button class="heart" type="button" aria-label="Save product">♡</button></div>
-          <div class="product-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/IPhone%2017%20Pro%20(Silver)%20-%20Backside.jpg" alt="iPhone 17 Pro Silver" /></div>
-          <span class="brand-label">APPLE</span>
-          <h3>Apple iPhone 17 Pro 12GB/256GB</h3>
-          <p class="variant">Silver</p>
-          <div class="swatches">
-            <button class="swatch orange" title="Cosmic Orange"></button>
-            <button class="swatch deepblue" title="Deep Blue"></button>
-            <button class="swatch silver active" title="Silver"></button>
-          </div>
-          <div class="price-row"><strong>3,709₾</strong><small>from 309₾ / month</small></div>
-          <button class="cart-btn" type="button">ADD TO CART</button>
-        </article>
+            <div>
 
-        <article class="product-card placeholder-product" data-name="Apple MacBook Air" data-category="mac">
-          <div class="product-badges"><span class="badge new">NEW</span><button class="heart" type="button">♡</button></div>
-          <div class="product-photo icon-photo">💻</div><span class="brand-label">APPLE</span><h3>Apple MacBook Air</h3><p class="variant">Midnight</p><div class="price-row"><strong>Coming soon</strong><small>APO test catalog</small></div><button class="cart-btn disabled" type="button">COMING SOON</button>
-        </article>
+                <span>
+                    APPLE
+                </span>
 
-        <article class="product-card placeholder-product" data-name="Apple AirPods" data-category="audio">
-          <div class="product-badges"><span class="badge">AUDIO</span><button class="heart" type="button">♡</button></div>
-          <div class="product-photo icon-photo">🎧</div><span class="brand-label">APPLE</span><h3>Apple AirPods</h3><p class="variant">White</p><div class="price-row"><strong>Coming soon</strong><small>APO test catalog</small></div><button class="cart-btn disabled" type="button">COMING SOON</button>
-        </article>
+                <h2>
+                    iPhones
+                </h2>
 
-        <article class="product-card placeholder-product" data-name="Apple Watch" data-category="wearable">
-          <div class="product-badges"><span class="badge">WATCH</span><button class="heart" type="button">♡</button></div>
-          <div class="product-photo icon-photo">⌚</div><span class="brand-label">APPLE</span><h3>Apple Watch</h3><p class="variant">Aluminium</p><div class="price-row"><strong>Coming soon</strong><small>APO test catalog</small></div><button class="cart-btn disabled" type="button">COMING SOON</button>
-        </article>
+            </div>
 
-        <article class="product-card placeholder-product" data-name="Gaming Technology" data-category="gaming">
-          <div class="product-badges"><span class="badge">GAMING</span><button class="heart" type="button">♡</button></div>
-          <div class="product-photo icon-photo">🎮</div><span class="brand-label">GAMING</span><h3>Gaming technology</h3><p class="variant">More products later</p><div class="price-row"><strong>Coming soon</strong><small>APO test catalog</small></div><button class="cart-btn disabled" type="button">COMING SOON</button>
-        </article>
-      </div>
+            <a href="#">
+                View all →
+            </a>
+
+        </div>
+
+
+        <div
+            class="product-grid"
+            id="productGrid"
+        >
+
+
+            <!-- IPHONE 16 BLACK -->
+
+            <article
+                class="product-card"
+                data-name="Apple iPhone 16 128GB Black"
+            >
+
+                <div class="product-top">
+
+                    <span class="tag new">
+                        NEW
+                    </span>
+
+                    <button class="save-button">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=700&q=90"
+                        alt="iPhone Black"
+                    >
+
+                </div>
+
+
+                <div class="brand-name">
+                    APPLE
+                </div>
+
+                <h3>
+                    Apple iPhone 16 128GB
+                </h3>
+
+                <p class="product-color">
+                    Black
+                </p>
+
+
+                <div class="color-options">
+
+                    <button
+                        class="color-dot black active"
+                        title="Black"
+                    ></button>
+
+                    <button
+                        class="color-dot white"
+                        title="White"
+                    ></button>
+
+                    <button
+                        class="color-dot pink"
+                        title="Pink"
+                    ></button>
+
+                    <button
+                        class="color-dot teal"
+                        title="Teal"
+                    ></button>
+
+                    <button
+                        class="color-dot blue"
+                        title="Ultramarine"
+                    ></button>
+
+                </div>
+
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.9</span>
+                </div>
+
+
+                <div class="price">
+                    ₾2,499
+                </div>
+
+
+                <div class="monthly">
+                    from ₾208/month
+                </div>
+
+
+                <button class="cart-button">
+                    ADD TO CART
+                </button>
+
+            </article>
+
+
+            <!-- IPHONE 16 PRO -->
+
+            <article
+                class="product-card"
+                data-name="Apple iPhone 16 Pro 128GB Black Titanium"
+            >
+
+                <div class="product-top">
+
+                    <span class="tag">
+                        PRO
+                    </span>
+
+                    <button class="save-button">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="product-image dark-product">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1726737296409-52301252465b?auto=format&fit=crop&w=700&q=90"
+                        alt="iPhone Pro"
+                    >
+
+                </div>
+
+
+                <div class="brand-name">
+                    APPLE
+                </div>
+
+                <h3>
+                    Apple iPhone 16 Pro 128GB
+                </h3>
+
+                <p class="product-color">
+                    Black Titanium
+                </p>
+
+
+                <div class="color-options">
+
+                    <button
+                        class="color-dot titanium-black active"
+                    ></button>
+
+                    <button
+                        class="color-dot titanium-white"
+                    ></button>
+
+                    <button
+                        class="color-dot titanium-desert"
+                    ></button>
+
+                </div>
+
+
+                <div class="rating">
+                    ★★★★★
+                    <span>5.0</span>
+                </div>
+
+
+                <div class="price">
+                    ₾3,299
+                </div>
+
+
+                <div class="monthly">
+                    from ₾275/month
+                </div>
+
+
+                <button class="cart-button">
+                    ADD TO CART
+                </button>
+
+            </article>
+
+
+            <!-- IPHONE 15 BLACK -->
+
+            <article
+                class="product-card"
+                data-name="Apple iPhone 15 128GB Black"
+            >
+
+                <div class="product-top">
+
+                    <span class="tag sale">
+                        SALE
+                    </span>
+
+                    <button class="save-button">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=700&q=90"
+                        alt="iPhone 15"
+                    >
+
+                </div>
+
+
+                <div class="brand-name">
+                    APPLE
+                </div>
+
+                <h3>
+                    Apple iPhone 15 128GB
+                </h3>
+
+                <p class="product-color">
+                    Black
+                </p>
+
+
+                <div class="color-options">
+
+                    <button
+                        class="color-dot black active"
+                    ></button>
+
+                    <button
+                        class="color-dot blue-light"
+                    ></button>
+
+                    <button
+                        class="color-dot green"
+                    ></button>
+
+                    <button
+                        class="color-dot pink-light"
+                    ></button>
+
+                </div>
+
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.8</span>
+                </div>
+
+
+                <div class="price-row">
+
+                    <div class="price">
+                        ₾2,139
+                    </div>
+
+                    <del>
+                        ₾2,299
+                    </del>
+
+                </div>
+
+
+                <div class="monthly">
+                    from ₾178/month
+                </div>
+
+
+                <button class="cart-button">
+                    ADD TO CART
+                </button>
+
+            </article>
+
+
+            <!-- IPHONE 15 GREEN -->
+
+            <article
+                class="product-card"
+                data-name="Apple iPhone 15 128GB Green"
+            >
+
+                <div class="product-top">
+
+                    <span class="tag">
+                        APPLE
+                    </span>
+
+                    <button class="save-button">
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="product-image green-product">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=700&q=90"
+                        alt="iPhone Green"
+                    >
+
+                </div>
+
+
+                <div class="brand-name">
+                    APPLE
+                </div>
+
+                <h3>
+                    Apple iPhone 15 128GB
+                </h3>
+
+                <p class="product-color">
+                    Green
+                </p>
+
+
+                <div class="color-options">
+
+                    <button class="color-dot black"></button>
+
+                    <button class="color-dot blue-light"></button>
+
+                    <button
+                        class="color-dot green active"
+                    ></button>
+
+                    <button class="color-dot pink-light"></button>
+
+                </div>
+
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.7</span>
+                </div>
+
+
+                <div class="price">
+                    ₾2,139
+                </div>
+
+
+                <div class="monthly">
+                    from ₾178/month
+                </div>
+
+
+                <button class="cart-button">
+                    ADD TO CART
+                </button>
+
+            </article>
+
+        </div>
+
     </section>
 
-    <section class="apo-panel">
-      <img src="assets/apo-logo.png" alt="APO" />
-      <div><span>APO TECHNOLOGY</span><h2>YOUR STORE.<br>YOUR BRAND.</h2><p>This is a test storefront made for APO. It is not affiliated with Alta or Apple. Product names and images belong to their respective owners.</p></div>
+
+    <!-- APO SECTION -->
+
+    <section class="apo-section">
+
+        <div class="apo-symbol">
+            APO
+        </div>
+
+
+        <div class="apo-description">
+
+            <span>
+                APO TECHNOLOGY
+            </span>
+
+            <h2>
+                TECHNOLOGY<br>
+                BY APO.
+            </h2>
+
+            <p>
+                APO Technology is a test electronics
+                storefront made by the APO project.
+                Products shown here are for website
+                testing and demonstration.
+            </p>
+
+        </div>
+
     </section>
-  </main>
 
-  <aside id="cartDrawer" class="drawer">
-    <div class="drawer-head"><h2>YOUR CART</h2><button id="closeCart" type="button">×</button></div>
-    <div id="cartItems" class="drawer-body"><p class="empty">Your cart is empty.</p></div>
-    <div class="drawer-footer"><div><span>Total</span><strong id="cartTotal">0₾</strong></div><button type="button">CHECKOUT (DEMO)</button></div>
-  </aside>
-  <div id="overlay" class="overlay"></div>
 
-  <footer id="footer">
-    <div class="footer-brand"><img src="assets/apo-logo.png" alt="APO logo" /><div><strong>APO TECHNOLOGY</strong><span>Test storefront</span></div></div>
-    <div><h4>SHOP</h4><a href="#products">iPhone</a><a href="#products">Computers</a><a href="#products">Audio</a></div>
-    <div><h4>APO</h4><a href="#">About</a><a href="#">Support</a><a href="#">Contact</a></div>
-    <div><h4>NOTICE</h4><p>Demo only. No real purchases are processed.</p></div>
-  </footer>
-  <div class="copyright">© 2026 APO TECHNOLOGY // TEST WEBSITE</div>
+    <!-- FOOTER -->
 
-  <script src="script.js"></script>
+    <footer>
+
+        <div>
+
+            <div class="footer-logo">
+                APO
+            </div>
+
+            <strong>
+                TECHNOLOGY
+            </strong>
+
+            <p>
+                Test electronics website by APO.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>
+                PRODUCTS
+            </strong>
+
+            <a href="#">
+                Phones
+            </a>
+
+            <a href="#">
+                Computers
+            </a>
+
+            <a href="#">
+                Gaming
+            </a>
+
+            <a href="#">
+                TVs
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>
+                APO
+            </strong>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="#">
+                Support
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <strong>
+                IMPORTANT
+            </strong>
+
+            <p>
+                This is a test website.
+                No purchases are real.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <div class="copyright">
+
+        © 2026 APO TECHNOLOGY
+
+    </div>
+
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
