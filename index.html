@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>APO Technology</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div>APO TECHNOLOGY</div>
+
+        <div class="top-links">
+            <a href="#">Promotions</a>
+            <a href="#">Support</a>
+            <a href="#">Stores</a>
+        </div>
+    </div>
+
+
+    <header>
+
+        <a
+            href="#"
+            class="logo"
+        >
+            <img
+                src="assets/apo-logo.png"
+                alt="APO"
+            >
+
+            <div>
+                <strong>APO</strong>
+                <span>TECHNOLOGY</span>
+            </div>
+        </a>
+
+
+        <button
+            class="catalog-button"
+            id="catalogButton"
+        >
+            ☰
+            Categories
+        </button>
+
+
+        <div class="search">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+
+        <div class="header-buttons">
+
+            <button>
+                ♡
+                <span id="favoriteCount">0</span>
+            </button>
+
+            <button>
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div
+        class="catalog-menu"
+        id="catalogMenu"
+    >
+
+        <a href="#">Phones & Tablets</a>
+        <a href="#">Laptops</a>
+        <a href="#">Computers</a>
+        <a href="#">Gaming</a>
+        <a href="#">TV & Audio</a>
+        <a href="#">Accessories</a>
+        <a href="#">Smart Watches</a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#phones">
+            Smartphones
+        </a>
+
+        <a href="#">
+            Apple
+        </a>
+
+        <a href="#">
+            Samsung
+        </a>
+
+        <a href="#">
+            Laptops
+        </a>
+
+        <a
+            href="#"
+            class="sale"
+        >
+            Promotions
+        </a>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <span>
+                    APO TECHNOLOGY
+                </span>
+
+                <h1>
+                    TECH YOU<br>
+                    ACTUALLY WANT.
+                </h1>
+
+                <p>
+                    Smartphones, laptops, gaming,
+                    accessories and more.
+                </p>
+
+                <button
+                    onclick="scrollToProducts()"
+                >
+                    SHOP PRODUCTS
+                </button>
+
+            </div>
+
+
+            <div class="hero-phone">
+
+                <img
+                    src="assets/products/iphone16-ultramarine.png"
+                    alt="iPhone"
+                >
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="categories"
+        >
+
+            <button>
+                📱
+                <span>Phones</span>
+            </button>
+
+            <button>
+                💻
+                <span>Laptops</span>
+            </button>
+
+            <button>
+                🎮
+                <span>Gaming</span>
+            </button>
+
+            <button>
+                🎧
+                <span>Audio</span>
+            </button>
+
+            <button>
+                ⌚
+                <span>Wearables</span>
+            </button>
+
+            <button>
+                📺
+                <span>TV</span>
+            </button>
+
+        </section>
+
+
+        <section
+            class="products-section"
+            id="phones"
+        >
+
+            <div class="section-title">
+
+                <div>
+
+                    <span>
+                        APPLE
+                    </span>
+
+                    <h2>
+                        iPhone
+                    </h2>
+
+                </div>
+
+                <button>
+                    View all
+                </button>
+
+            </div>
+
+
+            <div
+                class="products"
+                id="productGrid"
+            >
+
+                <!-- IPHONE 16 -->
+
+                <article
+                    class="product"
+                    data-name="iphone 16 ultramarine apple"
+                >
+
+                    <div class="product-top">
+
+                        <span class="badge">
+                            NEW
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="image-box">
+
+                        <img
+                            id="iphone16Image"
+                            src="assets/products/iphone16-ultramarine.png"
+                            alt="iPhone 16"
+                        >
+
+                    </div>
+
+
+                    <small>
+                        APPLE
+                    </small>
+
+                    <h3>
+                        iPhone 16 128GB
+                    </h3>
+
+                    <p class="product-subtitle">
+                        6.1-inch · 128GB
+                    </p>
+
+
+                    <div class="colors">
+
+                        <button
+                            class="color ultramarine active"
+                            onclick="changePhoneColor(
+                                'iphone16Image',
+                                'assets/products/iphone16-ultramarine.png',
+                                this
+                            )"
+                        ></button>
+
+                        <button
+                            class="color pink"
+                            onclick="changePhoneColor(
+                                'iphone16Image',
+                                'assets/products/iphone16-pink.png',
+                                this
+                            )"
+                        ></button>
+
+                        <button
+                            class="color black"
+                            onclick="changePhoneColor(
+                                'iphone16Image',
+                                'assets/products/iphone16-black.png',
+                                this
+                            )"
+                        ></button>
+
+                    </div>
+
+
+                    <div class="price">
+                        ₾2,399
+                    </div>
+
+
+                    <button
+                        class="cart"
+                        onclick="addToCart(this)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </article>
+
+
+                <!-- IPHONE 16 PINK -->
+
+                <article
+                    class="product"
+                    data-name="iphone 16 pink apple"
+                >
+
+                    <div class="product-top">
+
+                        <span class="badge sale-badge">
+                            -10%
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="image-box">
+
+                        <img
+                            src="assets/products/iphone16-pink.png"
+                            alt="iPhone 16 Pink"
+                        >
+
+                    </div>
+
+
+                    <small>
+                        APPLE
+                    </small>
+
+                    <h3>
+                        iPhone 16 256GB
+                    </h3>
+
+                    <p class="product-subtitle">
+                        Pink · 256GB
+                    </p>
+
+
+                    <div class="colors">
+
+                        <span class="color pink active"></span>
+                        <span class="color white"></span>
+                        <span class="color teal"></span>
+
+                    </div>
+
+
+                    <div class="old-price">
+                        ₾2,999
+                    </div>
+
+                    <div class="price">
+                        ₾2,699
+                    </div>
+
+
+                    <button
+                        class="cart"
+                        onclick="addToCart(this)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </article>
+
+
+                <!-- IPHONE 16 PRO -->
+
+                <article
+                    class="product"
+                    data-name="iphone 16 pro desert titanium apple"
+                >
+
+                    <div class="product-top">
+
+                        <span class="badge pro-badge">
+                            PRO
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="image-box">
+
+                        <img
+                            id="iphone16ProImage"
+                            src="assets/products/iphone16pro-desert.png"
+                            alt="iPhone 16 Pro"
+                        >
+
+                    </div>
+
+
+                    <small>
+                        APPLE
+                    </small>
+
+                    <h3>
+                        iPhone 16 Pro 128GB
+                    </h3>
+
+                    <p class="product-subtitle">
+                        6.3-inch · Titanium
+                    </p>
+
+
+                    <div class="colors">
+
+                        <button
+                            class="color desert active"
+                            onclick="changePhoneColor(
+                                'iphone16ProImage',
+                                'assets/products/iphone16pro-desert.png',
+                                this
+                            )"
+                        ></button>
+
+                        <button
+                            class="color black"
+                            onclick="changePhoneColor(
+                                'iphone16ProImage',
+                                'assets/products/iphone16pro-black.png',
+                                this
+                            )"
+                        ></button>
+
+                    </div>
+
+
+                    <div class="price">
+                        ₾3,299
+                    </div>
+
+
+                    <button
+                        class="cart"
+                        onclick="addToCart(this)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </article>
+
+
+                <!-- IPHONE 16 PRO BLACK -->
+
+                <article
+                    class="product"
+                    data-name="iphone 16 pro black titanium apple"
+                >
+
+                    <div class="product-top">
+
+                        <span class="badge">
+                            APPLE
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="image-box">
+
+                        <img
+                            src="assets/products/iphone16pro-black.png"
+                            alt="iPhone 16 Pro Black"
+                        >
+
+                    </div>
+
+
+                    <small>
+                        APPLE
+                    </small>
+
+                    <h3>
+                        iPhone 16 Pro 256GB
+                    </h3>
+
+                    <p class="product-subtitle">
+                        Black Titanium · 256GB
+                    </p>
+
+
+                    <div class="colors">
+
+                        <span class="color black active"></span>
+                        <span class="color natural"></span>
+                        <span class="color white"></span>
+
+                    </div>
+
+
+                    <div class="price">
+                        ₾3,699
+                    </div>
+
+
+                    <button
+                        class="cart"
+                        onclick="addToCart(this)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="apo-banner">
+
+            <div>
+
+                <span>
+                    POWERED BY APO
+                </span>
+
+                <h2>
+                    APO TECHNOLOGY
+                </h2>
+
+                <p>
+                    Test electronics storefront.
+                    No real orders are processed.
+                </p>
+
+            </div>
+
+            <img
+                src="assets/apo-logo.png"
+                alt="APO"
+            >
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <strong>
+            APO TECHNOLOGY
+        </strong>
+
+        <p>
+            © 2026 APO. Test website.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
